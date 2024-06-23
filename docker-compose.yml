@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    container_name: api
+    depends_on:
+      - db
+    networks:
+      - demo-network
+
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql
+    ports:
+      - "6005:3306"
+    environment:
+      MYSQL_DATABASE: authentication_prisma
+      MYSQL_ROOT_PASSWORD: "9345381276771"
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
+    external: true
