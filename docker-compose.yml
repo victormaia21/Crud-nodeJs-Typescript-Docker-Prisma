@@ -5,7 +5,7 @@ services:
       context: ./
     ports:
       - "3000:3000"
-    container_name: api
+    container_name: api_node
     depends_on:
       - db
     networks:
@@ -14,9 +14,9 @@ services:
   db:
     image: mysql:5.7
     restart: always
-    container_name: mysql
+    container_name: mysql_node
     ports:
-      - "6005:3306"
+      - "6010:3306"
     environment:
       MYSQL_DATABASE: authentication_prisma
       MYSQL_ROOT_PASSWORD: "9345381276771"

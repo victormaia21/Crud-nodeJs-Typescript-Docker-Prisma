@@ -1,28 +1,45 @@
 # Iniciando o node.js
 
-1.Iniciando com docker:<br>
-`docker-compose up --build`
+- Iniciando com docker:<br>
 
-2.Iniciando localmente:<br>
+  1. Crie um arquivo .env no diretorio principal e prencha-o como no exemplo abaixo
 
-- Abra seu pgAdmin e crie um banco de dados com um nome de sua preferencia
-- Digite o comando `npm install`
-- Digite o comando `npx prisma init`
-- Digite o comando `npx prisma migrate dev` e faça a primeira migração
-- Digite o comando `npm start`
-- Crie um arquivo .env no diretorio principal e prencha-o como no exemplo abaixo
+  ```
+  DATABASE_URL="mysql://name:password@localhost:3306/database_name"
 
-```
-DATABASE_URL="mysql://name:password@localhost:3306/database_name"
+  PORT=3000
 
-PORT=3000
+  TOKEN_SECRET="TOKEN_PASSWORD"
 
-TOKEN_SECRET="TOKEN_PASSWORD"
+  DATABASE_USERNAME="USERNAME"
+  DATABASE_PASSWORD="PASSWORD"
+  DATABASE_PORT=3306
+  DATABASE_NAME="DATABASE_NAME"
+  ```
 
-DATABASE_USERNAME="USERNAME"
-DATABASE_PASSWORD="PASSWORD"
-DATABASE_PORT=3306
-DATABASE_NAME="DATABASE_NAME"
-```
+  2. Digite o comando `docker-compose up --build`
 
-- Depois vá para a documentação no swagger http://localhost:3000/api/v1/docs
+  3. Depois vá para a documentação no swagger http://localhost:3000/api/v1/docs
+
+- Iniciando localmente:<br>
+
+  1. Abra seu MySql e crie um banco de dados com um nome de sua preferencia
+  2. Digite o comando `npm install`
+  3. Digite o comando `npx prisma migrate dev` e faça a primeira migração
+  4. Digite o comando `npm start`
+  5. Crie um arquivo .env no diretorio principal e prencha-o como no exemplo abaixo
+
+  ```
+  DATABASE_URL="mysql://name:password@localhost:3306/database_name"
+
+  PORT=3000
+
+  TOKEN_SECRET="TOKEN_PASSWORD"
+
+  DATABASE_USERNAME="USERNAME"
+  DATABASE_PASSWORD="PASSWORD"
+  DATABASE_PORT=3306
+  DATABASE_NAME="DATABASE_NAME"
+  ```
+
+  6. Depois vá para a documentação no swagger http://localhost:3000/api/v1/docs
